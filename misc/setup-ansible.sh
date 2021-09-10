@@ -26,6 +26,7 @@ then
   echo -e "\tActivated"
 else 
   echo -e "\tNo Idea what shell is used, add the correct logic to activate venv here"
+  exit 17
 fi
 
 
