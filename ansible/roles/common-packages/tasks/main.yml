@@ -1,0 +1,45 @@
+---
+- name: Get OS specific Package names
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+  tags: vars
+
+- name: debug
+  debug:
+    var: ansible_distribution
+
+- name: debug
+  debug:
+    var: ansible_distribution_major_version
+
+- name: Install Common Packages
+  become: yes
+  ansible.builtin.package:
+    state: present
+    name:
+      - bat
+      - diff-so-fancy
+      - lazygit
+      - docker-compose 
+      - neovim
+      - the_silver_searcher
+      - tmux
+      - tree
+      - fd
+      - ripgrep
+      - tea
+      - fzf
+      - htop
+      - gnupg
+      - terraform
+      - curl
+      - docker
+      - '{{ github_cli }}'
+
+- name: Install the packages needing special treatment from OS Package Manager
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"

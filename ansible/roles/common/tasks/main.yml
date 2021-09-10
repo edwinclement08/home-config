@@ -1,0 +1,17 @@
+---
+
+- import_tasks: locale.yml
+  become: true  
+  tags:
+    - locale
+
+- import_tasks: ssh.yml
+  become: true  
+  tags:
+    - ssh
+
+- import_tasks: timezone.yml
+  become: true  
+  tags:
+    - timezone
+

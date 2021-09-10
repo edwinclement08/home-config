@@ -1,1 +1,5 @@
+[all:vars]
+username=edwin
+
+[personal]
 localhost

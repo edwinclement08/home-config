@@ -1,0 +1,10 @@
+---
+- name: Base Setup
+  hosts: all
+  roles:
+    - role: common 
+      tags: 
+        - role-common
+    - role: common-packages
+      tags:
+        - role-common-packages

@@ -14,3 +14,18 @@ xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 required packages
 vim
 tree
+
+
+remember to use ssh-agent and ssh-add
+
+
+run ansible with
+ansible-playbook ansible/playbooks/provision.yml -K 
+-K requests the sudo password
+
+
+
+mac will need cask things to work differently
+like 
+docker 
+also need to handle taps
