@@ -29,3 +29,6 @@ mac will need cask things to work differently
 like 
 docker 
 also need to handle taps
+
+
+TODO remember to update all the repositories before common install

@@ -1,10 +1,15 @@
 echo "Setting up Linux"
 
-DISTRIBUTION=$(lsb_release -ds)
+DISTRIBUTION=$(lsb_release -is)
 
-if [ "${DISTRIBUTION}" = '"Garuda Linux"' ] ; then
+if [ "${DISTRIBUTION}" = 'Garuda' ] ; then
   echo "Installing Openssh"
   sudo pacman -S --noconfirm --needed openssh 2>&1 |  sed 's/^/\t/g'
+elif [ "${DISTRIBUTION}" = 'Debian' ] ; then
+  # Needed as Ubuntu & Debian don't include this by default
+  sudo apt install python3-venv
+elif [ "${DISTRIBUTION}" = 'Ubuntu' ] ; then
+  sudo apt install python3-venv
 fi
 
 echo "Ensuring sshd is up and running"
