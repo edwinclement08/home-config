@@ -1,0 +1,11 @@
+Ansible
+------
+
+git config --global init.defaultBranch master
+  git config --global user.email "edwinclement08@gmail.com"
+  git config --global user.name "Edwin Clement"
+
+
+setxkbmap -option caps:swapescape
+xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"  
+xmodmap -e "keycode 66 = Escape NoSymbol Escape"    
