@@ -15,5 +15,6 @@
     path: /etc/apt/sources.list.d/github-cli.list
 
 - name: diff-so-fancy - Adding PPA
+  become: yes
   ansible.builtin.apt_repository:
     repo: ppa:aos1/diff-so-fancy
