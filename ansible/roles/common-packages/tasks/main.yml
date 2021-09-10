@@ -3,6 +3,12 @@
   debug:
     var: ansible_distribution
 
+- name: Setup OS specific repositories/taps 
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+
 - name: Get OS specific Package names
   include_vars: "{{ item }}"
   with_first_found:
@@ -34,8 +40,3 @@
       - docker
       - '{{ github_cli }}'
 
-- name: Install the packages needing special treatment from OS Package Manager
-  include_tasks: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
-    - "{{ ansible_distribution }}.yml"
