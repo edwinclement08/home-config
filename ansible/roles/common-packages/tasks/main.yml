@@ -1,18 +1,14 @@
 ---
+- name: debug
+  debug:
+    var: ansible_distribution
+
 - name: Get OS specific Package names
   include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
     - "{{ ansible_distribution }}.yml"
   tags: vars
-
-- name: debug
-  debug:
-    var: ansible_distribution
-
-- name: debug
-  debug:
-    var: ansible_distribution_major_version
 
 - name: Install Common Packages
   become: yes
