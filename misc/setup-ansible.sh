@@ -29,10 +29,11 @@ else
   exit 17
 fi
 
+echo "Ensuring wheel is installed"
+pip install wheel 2>&1 |   sed 's/^/\t/g'
 
 echo "Ensuring Ansible is installed"
 pip freeze | fgrep 'ansible=' > /dev/null
-
 if [ "$?" = "0" ]
 then
   echo -e "\tAnsible is already installed"
