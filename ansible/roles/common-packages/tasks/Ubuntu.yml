@@ -18,3 +18,8 @@
   become: yes
   ansible.builtin.apt_repository:
     repo: ppa:aos1/diff-so-fancy
+
+- name: lazygit (depr)
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: ppa:lazygit-team/release
