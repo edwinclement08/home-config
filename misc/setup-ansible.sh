@@ -20,6 +20,10 @@ if [ "$(echo $SHELL)" = "/bin/zsh" ]
 then
   source "$VENV_PATH/bin/activate"
   echo -e "\tActivated"
+elif [ "$(echo $SHELL)" = "/bin/bash" ] 
+then
+  source "$VENV_PATH/bin/activate"
+  echo -e "\tActivated"
 else 
   echo -e "\tNo Idea what shell is used, add the correct logic to activate venv here"
 fi
