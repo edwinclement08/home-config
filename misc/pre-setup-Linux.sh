@@ -7,9 +7,9 @@ if [ "${DISTRIBUTION}" = 'Garuda' ] ; then
   sudo pacman -S --noconfirm --needed openssh 2>&1 |  sed 's/^/\t/g'
 elif [ "${DISTRIBUTION}" = 'Debian' ] ; then
   # Needed as Ubuntu & Debian don't include this by default
-  sudo apt install -y python3-venv |  sed 's/^/\t/g'
+  sudo apt-get install -y python3-venv |  sed 's/^/\t/g'
 elif [ "${DISTRIBUTION}" = 'Ubuntu' ] ; then
-  sudo apt install -y python3-venv |  sed 's/^/\t/g'
+  sudo apt-get install -y python3-venv |  sed 's/^/\t/g'
 fi
 
 echo "Ensuring sshd is up and running"
