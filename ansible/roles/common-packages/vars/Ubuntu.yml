@@ -1,3 +1,4 @@
 github_cli : gh
 the_silver_searcher: silversearcher-ag
+fd_find: fd-find
 

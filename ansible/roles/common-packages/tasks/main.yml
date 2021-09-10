@@ -28,7 +28,6 @@
       - neovim
       - tmux
       - tree
-      - fd
       - ripgrep
       - tea
       - fzf
@@ -37,5 +36,6 @@
       - terraform
       - curl
       - docker
+      - '{{fd_find}}'
       - '{{ github_cli }}'
       - '{{the_silver_searcher}}'
