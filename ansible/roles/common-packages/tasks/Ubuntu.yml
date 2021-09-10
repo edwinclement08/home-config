@@ -1,15 +1,19 @@
 ---
 
-- name: Adding keyring for github-cli
+- name: github-cli: Adding keyring
   become: yes
   ansible.builtin.shell: |
+    sudo rm /usr/share/keyrings/githubcli-archive-keyring.gpg
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
 
-- name: 
+- name: github-cli: Adding Sources.list
   become: yes
   ansible.builtin.lineinfile:
-    line: "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+    line: "deb [arch=amd64 signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
     state: present
     create: yes
-    path: /etc/apt/sources.list.d/github-cli.list 
+    path: /etc/apt/sources.list.d/github-cli.list
 
+- name: diff-so-fancy
+  ansible.builtin.apt_repository:
+    repo: ppa:aos1/diff-so-fancy
