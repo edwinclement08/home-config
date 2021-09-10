@@ -26,7 +26,6 @@
       - lazygit
       - docker-compose 
       - neovim
-      - the_silver_searcher
       - tmux
       - tree
       - fd
@@ -39,4 +38,4 @@
       - curl
       - docker
       - '{{ github_cli }}'
-
+      - '{{the_silver_searcher}}'
