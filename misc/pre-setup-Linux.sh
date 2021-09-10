@@ -5,7 +5,14 @@ DISTRIBUTION=$(lsb_release -ds)
 if [ "${DISTRIBUTION}" = '"Garuda Linux"' ] ; then
   echo "Installing Openssh"
   sudo pacman -S --noconfirm --needed openssh 2>&1 |  sed 's/^/\t/g'
-  source "$HOME_CONFIG/misc/systemctl.sh" sshd 
-
-  source "$HOME_CONFIG/misc/setup-ansible.sh"
 fi
+
+echo "Ensuring sshd is up and running"
+source "$HOME_CONFIG/misc/systemctl.sh" sshd |  sed 's/^/\t/g'
+
+echo "Generating SSH Key(if not exists) & adding to authorized"
+source "$HOME_CONFIG/misc/gen-and-add-ssh-key.sh" | sed 's/^/\t/g'
+
+echo "Installing Ansible"
+source "$HOME_CONFIG/misc/setup-ansible.sh" | sed 's/^/\t/g'
+

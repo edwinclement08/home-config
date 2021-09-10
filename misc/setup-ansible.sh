@@ -19,7 +19,7 @@ echo "Activating Venv"
 if [ "$(echo $SHELL)" = "/bin/zsh" ] 
 then
   source "$VENV_PATH/bin/activate"
-  echo "Activated"
+  echo -e "\tActivated"
 else 
   echo -e "\tNo Idea what shell is used, add the correct logic to activate venv here"
 fi
@@ -33,6 +33,7 @@ then
   echo -e "\tAnsible is already installed"
 else
   pip install ansible 2>&1 |   sed 's/^/\t/g'
+  echo -e "\tInstalled Ansible"
 fi
 
 
