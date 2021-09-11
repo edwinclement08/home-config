@@ -5,6 +5,6 @@
     - role: common 
       tags: 
         - role-common
-    - role: common-packages
+    - role: install-packages
       tags:
-        - role-common-packages
+        - role-install-packages
