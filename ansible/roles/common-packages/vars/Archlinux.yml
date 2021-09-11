@@ -1,7 +1,7 @@
-unique_package_names:
-  github_cli : github-cli
-  the_silver_searcher: the_silver_searcher
-  fd_find: fd
+differently_named_packages:
+  - github-cli
+  - the_silver_searcher
+  - fd
 
 exclude_packages_list: []
 

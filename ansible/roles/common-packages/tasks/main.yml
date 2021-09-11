@@ -31,7 +31,5 @@
   become: yes
   ansible.builtin.package:
     state: present
-    name:
-      - '{{fd_find}}'
-      - '{{github_cli}}'
-      - '{{the_silver_searcher}}'
+    name:  '{{ differently_named_packages }}'
+
