@@ -1,4 +1,8 @@
-github_cli : github-cli
-the_silver_searcher: the_silver_searcher
-fd_find: fd
+unique_package_names:
+  github_cli : github-cli
+  the_silver_searcher: the_silver_searcher
+  fd_find: fd
+
+exclude_packages_list: []
+
 

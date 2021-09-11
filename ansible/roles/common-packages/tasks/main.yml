@@ -24,7 +24,8 @@
   become: yes
   ansible.builtin.package:
     state: present
-    name: "{{common_packages_list}}"
+    name: "{{ common_packages_list | difference(exclude_packages_list) }}"
+
 
 - name: Install Packages with Different Names across Platforms
   become: yes

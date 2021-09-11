@@ -1,4 +1,8 @@
-github_cli : gh
-the_silver_searcher: silversearcher-ag
-fd_find: fd-find
+unique_package_names:
+  github_cli : gh
+  the_silver_searcher: silversearcher-ag
+  fd_find: fd-find
+
+exclude_packages_list:
+  - bat 
 
