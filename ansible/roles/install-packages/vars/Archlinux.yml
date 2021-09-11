@@ -5,6 +5,7 @@ common_package_named_different:
 
 extra_os_specific_packages:
   - yay
+  - chezmoi
 
 # Either Can't be installed, or needs to be installed in a special manner
 # like AUR
