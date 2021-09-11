@@ -1,0 +1,16 @@
+common_packages_list:
+  - bat 
+  - diff-so-fancy
+  - lazygit 
+  - docker-compose 
+  - neovim 
+  - tmux
+  - tree
+  - ripgrep
+  - tea
+  - fzf
+  - htop
+  - gnupg
+  - terraform
+  - curl
+  - docker

@@ -3,6 +3,10 @@
   debug:
     var: ansible_distribution
 
+- name: debug
+  debug:
+    var: ansible_distribution
+
 - name: Setup OS specific repositories/taps 
   include_tasks: "{{ item }}"
   with_first_found:
@@ -20,22 +24,13 @@
   become: yes
   ansible.builtin.package:
     state: present
+    name: "{{common_packages_list}}"
+
+- name: Install Packages with Different Names across Platforms
+  become: yes
+  ansible.builtin.package:
+    state: present
     name:
-      - bat
-      - diff-so-fancy
-      - lazygit
-      - docker-compose 
-      - neovim
-      - tmux
-      - tree
-      - ripgrep
-      - tea
-      - fzf
-      - htop
-      - gnupg
-      - terraform
-      - curl
-      - docker
       - '{{fd_find}}'
-      - '{{ github_cli }}'
+      - '{{github_cli}}'
       - '{{the_silver_searcher}}'

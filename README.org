@@ -32,3 +32,6 @@ also need to handle taps
 
 
 TODO remember to update all the repositories before common install
+
+
+ripgrep and bat conflict in ubuntu < 20.04
