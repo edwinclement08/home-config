@@ -1,8 +1,11 @@
-unique_package_names:
+common_package_named_different:
   - gh
   - searcher-ag
   - fd-find
 
+extra_os_specific_packages: []
+
 exclude_packages_list:
   - bat 
 
+external_packages_list: []

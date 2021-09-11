@@ -3,15 +3,11 @@
   debug:
     var: ansible_distribution
 
-- name: debug
-  debug:
-    var: ansible_distribution
-
 - name: Setup OS specific repositories/taps 
   include_tasks: "{{ item }}"
   with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
-    - "{{ ansible_distribution }}.yml"
+    - "setup_package_manager/{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "setup_package_manager/{{ ansible_distribution }}.yml"
 
 - name: Get OS specific Package names
   include_vars: "{{ item }}"
@@ -24,12 +20,13 @@
   become: yes
   ansible.builtin.package:
     state: present
-    name: "{{ common_packages_list | difference(exclude_packages_list) }}"
+    name: "{{ common_package_named_different + common_packages_list + extra_os_specific_packages| difference(exclude_packages_list) }}"
+  tags: install-common-packages
 
 
-- name: Install Packages with Different Names across Platforms
-  become: yes
-  ansible.builtin.package:
-    state: present
-    name:  '{{ differently_named_packages }}'
-
+- name: Install Packages(not available through ansible.builtin.package)
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "install_os_specific/{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "install_os_specific/{{ ansible_distribution }}.yml"
+  tags: install-os-specific-packages

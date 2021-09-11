@@ -42,4 +42,7 @@ else
   echo -e "\tInstalled Ansible"
 fi
 
+echo "Ensuring Ansible Galaxy Requirements are satisfied"
+ansible-galaxy collection install -r requirements.yml |   sed 's/^/\t/g'
+
 

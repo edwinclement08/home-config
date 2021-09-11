@@ -1,8 +1,21 @@
-differently_named_packages:
+common_package_named_different:
   - github-cli
   - the_silver_searcher
   - fd
 
+extra_os_specific_packages:
+  - yay
+
+# Either Can't be installed, or needs to be installed in a special manner
+# like AUR
 exclude_packages_list: []
+
+# Anything ansible.builtin.package can't install for the 
+# distributions
+# For eg: AUR in arch
+external_packages_list:
+  - lazydocker 
+  - fnm-bin
+  - mycli
 
 
