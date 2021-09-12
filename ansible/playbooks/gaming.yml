@@ -1,0 +1,8 @@
+
+---
+- name: Linux Gaming Setup
+  hosts: all
+  roles:
+    - role: games
+      tags: 
+        - role-games

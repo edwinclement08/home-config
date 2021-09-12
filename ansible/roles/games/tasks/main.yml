@@ -1,0 +1,9 @@
+--- 
+- name: Install Gaming Packages
+  become: yes
+  ansible.builtin.package:
+    state: present
+    name:
+      - steam
+      - lutris
+
