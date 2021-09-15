@@ -1,0 +1,6 @@
+- name: Install Ventoy Linux iso
+  become: yes
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: ventoy-bin
+  tags: ['never' , 'ventoy', 'ventoy-base']

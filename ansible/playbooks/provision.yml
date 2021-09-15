@@ -8,3 +8,6 @@
     - role: install-packages
       tags:
         - role-install-packages
+    - role: os-config
+      tags:
+        - role-os-config

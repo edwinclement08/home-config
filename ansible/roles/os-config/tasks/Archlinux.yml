@@ -1,0 +1,4 @@
+---
+- name: Test case
+  debug:
+    msg: "Just running a test"

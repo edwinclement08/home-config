@@ -17,6 +17,8 @@ tree
 
 
 remember to use ssh-agent and ssh-add
+  eval `ssh-agent -s`
+  ssh-add -k ~/.ssh/ansible-self
 
 
 run ansible with
