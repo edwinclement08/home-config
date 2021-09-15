@@ -1,3 +1,32 @@
 ---
 - debug: msg='{{ showmevar}}'
   tags: [ 'never', 'debug' ]
+- osx_defaults:
+  domain: NSGlobalDomain
+  key: ApplePressAndHoldEnabled
+  type: bool
+  value: false
+  state: present
+
+- osx_defaults:
+  domain: com.apple.desktopservices
+  key: DSDontWriteNetworkStores 
+  type: bool
+  value: true
+  state: present
+
+- osx_defaults:
+  domain: NSGlobalDomain
+  key: InitialKeyRepeat
+  type: int
+  value: 14
+  state: present
+
+- osx_defaults:
+  domain: NSGlobalDomain
+  key: KeyRepeat
+  type: int
+  value: 2
+  state: present
+
+

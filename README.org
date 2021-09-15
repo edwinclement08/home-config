@@ -39,6 +39,8 @@ TODO add the following packages to Ubuntu config
 - chezmoi
 
 
+Figure out installing https://github.com/hnakamur/ansible-role-osx-noto-sans-fonts.git
+https://github.com/fubarhouse/ansible-role-macfonts
 
-
-
+install nerd-fonts-victor-mono on all except arch
+also template in the font sizes using chemoi

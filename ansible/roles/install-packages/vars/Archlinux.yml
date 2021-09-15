@@ -18,5 +18,5 @@ external_packages_list:
   - lazydocker 
   - fnm-bin
   - mycli
-
+  - nerd-fonts-victor-mono
 
