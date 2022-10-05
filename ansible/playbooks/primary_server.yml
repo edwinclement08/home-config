@@ -1,0 +1,5 @@
+---
+- name: Step CA
+  hosts: primary_server
+  roles:
+    - role: install_docker

@@ -3,3 +3,6 @@ username=edwin
 
 [personal]
 localhost
+
+[primary_server]
+server01.edwinclement08.com
