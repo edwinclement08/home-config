@@ -44,3 +44,10 @@ https://github.com/fubarhouse/ansible-role-macfonts
 
 install nerd-fonts-victor-mono on all except arch
 also template in the font sizes using chemoi
+
+
+Requirements
+
+Install artis3n.tailscale
+
+   ansible-galaxy install artis3n.tailscale
